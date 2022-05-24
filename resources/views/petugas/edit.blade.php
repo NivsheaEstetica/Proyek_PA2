@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('petugas_kendaraan.index') }}" enctype="multipart/form-data"> Back</a>
+                <a class="btn btn-primary" href="{{ route('petugas.index') }}" enctype="multipart/form-data"> Back</a>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
     </div>
   @endif
        
-  <form action="{{ route('petugas_kendaraan.update',$penumpang->id) }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('petugas.update',$penumpang->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
          <div class="row">
@@ -54,7 +54,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Alamat:</strong>
-                    <textarea class="form-control" style="height:50px" name="alamat" value="{{ $penumpang->alamat }}"></textarea>
+                    <textarea class="form-control" style="height:50px" name="alamat" >{{ $penumpang->alamat }}</textarea>
                     @error('alamat')
                      <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
